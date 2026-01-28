@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Royal Chai – Coming Soon</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --gold:#c8a44d;
+      --brown:#3b2a1f;
+      --cream:#f6f1e7;
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins', sans-serif;
+    }
+
+    body{
+      background:linear-gradient(135deg,var(--brown),#1e140d);
+      color:var(--cream);
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:20px;
+    }
+
+    .container{
+      max-width:650px;
+      width:100%;
+      padding:50px 30px;
+      background:rgba(255,255,255,0.05);
+      backdrop-filter: blur(8px);
+      border-radius:20px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    /* Logo */
+    .logo{
+      font-family:'Playfair Display', serif;
+      font-size:42px;
+      color:var(--gold);
+      margin-bottom:10px;
+    }
+
+    /* Tagline */
+    .tagline{
+      font-style:italic;
+      margin-bottom:20px;
+      color:#e9d7b8;
+    }
+
+    .description{
+      font-size:15px;
+      line-height:1.6;
+      margin-bottom:30px;
+      opacity:0.9;
+    }
+
+    /* Coming Soon badge */
+    .launch{
+      display:inline-block;
+      padding:8px 18px;
+      background:var(--gold);
+      color:#000;
+      font-weight:600;
+      border-radius:30px;
+      margin-bottom:25px;
+    }
+
+    /* Email box */
+    .email-box{
+      display:flex;
+      gap:10px;
+      margin-bottom:25px;
+    }
+
+    .email-box input{
+      flex:1;
+      padding:12px;
+      border:none;
+      border-radius:8px;
+      outline:none;
+    }
+
+    .email-box button{
+      background:var(--gold);
+      border:none;
+      padding:12px 20px;
+      border-radius:8px;
+      cursor:pointer;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .email-box button:hover{
+      background:#e6c36a;
+    }
+
+    #message{
+      font-size:14px;
+      margin-top:8px;
+      color:var(--gold);
+    }
+
+    /* Social icons */
+    .socials{
+      margin-top:25px;
+      display:flex;
+      justify-content:center;
+      gap:18px;
+      font-size:20px;
+    }
+
+    .socials a{
+      color:var(--cream);
+      text-decoration:none;
+      transition:0.3s;
+    }
+
+    .socials a:hover{
+      color:var(--gold);
+      transform:scale(1.2);
+    }
+
+    /* Mobile */
+    @media(max-width:500px){
+      .email-box{
+        flex-direction:column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="logo">Royal Chai</div>
+
+    <div class="tagline">“Brew the Royal Tradition”</div>
+
+    <p class="description">
+      Premium instant chai tea premix inspired by royal Indian households.
+      Experience rich aroma, authentic spices and a taste of tradition in every cup.
+    </p>
+
+    <div class="launch">Launching Soon ☕</div>
+
+    <!-- Email Signup -->
+    <div class="email-box">
+      <input type="email" id="email" placeholder="Enter your email">
+      <button onclick="subscribe()">Notify Me</button>
+    </div>
+
+    <div id="message"></div>
+
+    <!-- Social Icons -->
+    <div class="socials">
+      <a href="#">🌐</a>
+      <a href="#">📷</a>
+      <a href="#">🐦</a>
+      <a href="#">📘</a>
+    </div>
+
+  </div>
+
+  <script>
+    function subscribe(){
+      const email = document.getElementById("email").value;
+      const message = document.getElementById("message");
+
+      if(email === "" || !email.includes("@")){
+        message.textContent = "Please enter a valid email!";
+      } else {
+        message.textContent = "Thank you! We'll notify you soon.";
+        document.getElementById("email").value="";
+      }
+    }
+  </script>
+
+</body>
+</html>
